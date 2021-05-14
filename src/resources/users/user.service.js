@@ -1,7 +1,9 @@
 const usersRepo = require('./user.memory.repository');
 const User = require('./user.model');
 
-const getAll = () => usersRepo.getAll();
+const getAllUsers = () => usersRepo.getAllUsers();
+
+const getUser = (id) => usersRepo.getUser(id);
 
 const addUser = (userData) => {
   const user = new User(userData);
@@ -10,4 +12,9 @@ const addUser = (userData) => {
   return user;
 };
 
-module.exports = { getAll, addUser };
+const updateUser = (id, userData) => {
+  const user = new User(userData);
+  return usersRepo.updateUser(id, user);
+};
+
+module.exports = { getAllUsers, getUser, addUser, updateUser };
