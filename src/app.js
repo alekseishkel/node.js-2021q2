@@ -18,7 +18,6 @@ app.use('/', (req, res, next) => {
   }
   next();
 });
-
 app.use('/users', userRouter);
 
 module.exports = app;
