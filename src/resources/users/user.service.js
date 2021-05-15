@@ -17,4 +17,6 @@ const updateUser = (id, userData) => {
   return usersRepo.updateUser(id, user);
 };
 
-module.exports = { getAllUsers, getUser, addUser, updateUser };
+const deleteUser = (id) => usersRepo.deleteUser(id);
+
+module.exports = { getAllUsers, getUser, addUser, updateUser, deleteUser };
