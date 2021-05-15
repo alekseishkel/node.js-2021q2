@@ -8,20 +8,20 @@ const addTask = async (task) => {
   tasks.push(task);
 };
 
-// const updateBoard = async (id, {title, columns}) => {
-//   let updatedBoard;
-//   const updatingBoard = await getBoard(id);
+const updateTask = async (id, {title, order, description, userId, boardId, columnId}) => {
+  let updatedTask;
+  const updatingTask = await getTask(id);
 
-//   if (updatingBoard) {
-//     const updatingBoardIndex = boards.findIndex(board => board.id === id);
-//     updatedBoard = {...updatingBoard, title, columns};
-//     boards[updatingBoardIndex] = updatedBoard; 
-//   } else {
-//     updatedBoard = undefined;
-//   }
+  if (updatingTask) {
+    const updatingTaskIndex = tasks.findIndex(board => board.id === id);
+    updatedTask = {...updatingTask, title, order, description, userId, boardId, columnId};
+    tasks[updatingTaskIndex] = updatedTask; 
+  } else {
+    updatedTask = undefined;
+  }
 
-//   return updatedBoard;
-// };
+  return updatedTask;
+};
 
 // const deleteBoard = async (id) => {
 //   const deletingBoard = await getBoard(id);
@@ -34,4 +34,4 @@ const addTask = async (task) => {
 //   return deletingBoard;
 // };
 
-module.exports = { getAllTasks, addTask, getTask };
+module.exports = { getAllTasks, addTask, getTask, updateTask };

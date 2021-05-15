@@ -21,15 +21,15 @@ router.route('/:boardId/tasks').post(async (req, res) => {
   res.status(201).json(task);
 });
 
-// router.route('/:id').put(async (req, res) => {
-//   const board = await boardService.updateBoard(req.params.id, req.body);
+router.route('/:boardId/tasks/:taskId').put(async (req, res) => {
+  const task = await taskService.updateTask(req.params.taskId, req.body);
 
-//   if (board) {
-//     res.status(200).json(board);
-//   } else {
-//     res.status(404).json('Board not found');
-//   }
-// });
+  if (task) {
+    res.status(200).json(task);
+  } else {
+    res.status(404).json('Board not found');
+  }
+});
 
 // router.route('/:id').delete(async (req, res) => {
 //   const board = await boardService.deleteBoard(req.params.id);

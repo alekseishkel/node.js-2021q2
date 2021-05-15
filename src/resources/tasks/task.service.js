@@ -12,11 +12,11 @@ const addTask = (taskData) => {
   return task;
 };
 
-// const updateBoard = (id, boardData) => {
-//   const board = new Board(boardData);
-//   return boardsRepo.updateBoard(id, board);
-// };
+const updateTask = (id, taskData) => {
+  const task = new Task(taskData);
+  return tasksRepo.updateTask(id, task);
+};
 
 // const deleteBoard = (id) => boardsRepo.deleteBoard(id);
 
-module.exports = { getAllTasks, addTask, getTask };
+module.exports = { getAllTasks, addTask, getTask, updateTask };
