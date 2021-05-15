@@ -8,8 +8,13 @@ router.route('/').get(async (req, res) => {
 });
 
 router.route('/:id').get(async (req, res) => {
-  const board = await boardService.getBoard(req.params.id) || "Board no found";
-  res.json(board);
+  const board = await boardService.getBoard(req.params.id);
+
+  if (board) {
+    res.status(200).json(board);
+  } else {
+    res.status(404).json('Board not found');
+  }
 });
 
 router.route('/').post(async (req, res) => {
@@ -18,14 +23,23 @@ router.route('/').post(async (req, res) => {
 });
 
 router.route('/:id').put(async (req, res) => {
-  const board = await boardService.updateBoard(req.params.id, req.body) || "Board no found";
-  console.log(board);
-  res.json(board);
+  const board = await boardService.updateBoard(req.params.id, req.body);
+
+  if (board) {
+    res.status(200).json(board);
+  } else {
+    res.status(404).json('Board not found');
+  }
 });
 
-// router.route('/:id').delete(async (req, res) => {
-//   const user = await usersService.deleteUser(req.params.id);
-//   res.json(User.toResponse(user));
-// });
+router.route('/:id').delete(async (req, res) => {
+  const board = await boardService.deleteBoard(req.params.id);
+
+  if (board) {
+    res.status(200).json(board);
+  } else {
+    res.status(404).json('Board not found');
+  }
+});
 
 module.exports = router;

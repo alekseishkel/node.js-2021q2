@@ -23,11 +23,15 @@ const updateBoard = async (id, {title, columns}) => {
   return updatedBoard;
 };
 
-// const deleteUser = async (id) => {
-//   const deletingUser = await getUser(id);
-//   const deletingingUserIndex = users.findIndex(user => user.id === id);
-//   users.splice(deletingingUserIndex, 1);
-//   return deletingUser;
-// }
+const deleteBoard = async (id) => {
+  const deletingBoard = await getBoard(id);
+  
+  if (deletingBoard) {
+    const deletingingBoardIndex = boards.findIndex(board => board.id === id);
+    boards.splice(deletingingBoardIndex, 1);
+  }
+  
+  return deletingBoard;
+};
 
-module.exports = { getAllBoards, addBoard, getBoard, updateBoard };
+module.exports = { getAllBoards, addBoard, getBoard, updateBoard, deleteBoard };

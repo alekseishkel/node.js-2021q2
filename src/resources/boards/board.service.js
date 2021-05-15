@@ -17,6 +17,6 @@ const updateBoard = (id, boardData) => {
   return boardsRepo.updateBoard(id, board);
 };
 
-// const deleteUser = (id) => usersRepo.deleteUser(id);
+const deleteBoard = (id) => boardsRepo.deleteBoard(id);
 
-module.exports = { getAllBoards, addBoard, getBoard, updateBoard };
+module.exports = { getAllBoards, addBoard, getBoard, updateBoard, deleteBoard };
