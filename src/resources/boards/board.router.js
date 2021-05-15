@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const boardService = require('./board.service');
+const tasksService = require('../tasks/task.service');
 
 router.route('/').get(async (req, res) => {
   const boards = await boardService.getAllBoards();
@@ -33,6 +34,7 @@ router.route('/:id').put(async (req, res) => {
 
 router.route('/:id').delete(async (req, res) => {
   const board = await boardService.deleteBoard(req.params.id);
+  await tasksService.deleteBoardTasks(req.params.id);
 
   if (board) {
     res.status(200).json(board);

@@ -1,4 +1,4 @@
-const tasks = [];
+let tasks = [];
 
 const getAllTasks = async () => tasks;
 
@@ -34,4 +34,12 @@ const deleteTask = async (id) => {
   return deletingTask;
 };
 
-module.exports = { getAllTasks, addTask, getTask, updateTask, deleteTask };
+const deleteBoardTasks = async (boardId) => {
+  tasks = tasks.filter(task => task.boardId !== boardId);
+};
+
+const deleteUserTasks = async (userId) => {
+  tasks = tasks.map(task => task.userId === userId ? {...task, userId: null} : task);
+};
+
+module.exports = { getAllTasks, addTask, getTask, updateTask, deleteTask, deleteBoardTasks, deleteUserTasks };

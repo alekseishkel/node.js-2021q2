@@ -7,9 +7,8 @@ class Task {
     order = 0,
     description = "description",
     userId = "userId",
-    boardId = "boardId",
     columnId = "columnId"
-  } = {}) {
+  } = {}, boardId) {
     this.id = id;
     this.title = title;
     this.order = order;

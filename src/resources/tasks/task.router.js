@@ -17,12 +17,12 @@ router.route('/:boardId/tasks/:taskId').get(async (req, res) => {
 });
 
 router.route('/:boardId/tasks').post(async (req, res) => {
-  const task = await taskService.addTask(req.body);
+  const task = await taskService.addTask(req.body, req.params.boardId);
   res.status(201).json(task);
 });
 
 router.route('/:boardId/tasks/:taskId').put(async (req, res) => {
-  const task = await taskService.updateTask(req.params.taskId, req.body);
+  const task = await taskService.updateTask(req.params.taskId, req.params.boardId, req.body,);
 
   if (task) {
     res.status(200).json(task);
