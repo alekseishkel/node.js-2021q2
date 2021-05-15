@@ -8,14 +8,20 @@ const addBoard = async (board) => {
   boards.push(board);
 };
 
-// const updateUser = async (id, {name, login, password}) => {
-//   const updatingUser = await getUser(id);
-//   const updatingUserIndex = users.findIndex(user => user.id === id);
-//   const updatedUser = {...updatingUser, name, login, password};
-//   users[updatingUserIndex] = updatedUser; 
+const updateBoard = async (id, {title, columns}) => {
+  let updatedBoard;
+  const updatingBoard = await getBoard(id);
 
-//   return updateUser
-// };
+  if (updatingBoard) {
+    const updatingBoardIndex = boards.findIndex(board => board.id === id);
+    updatedBoard = {...updatingBoard, title, columns};
+    boards[updatingBoardIndex] = updatedBoard; 
+  } else {
+    updatedBoard = undefined;
+  }
+
+  return updatedBoard;
+};
 
 // const deleteUser = async (id) => {
 //   const deletingUser = await getUser(id);
@@ -24,4 +30,4 @@ const addBoard = async (board) => {
 //   return deletingUser;
 // }
 
-module.exports = { getAllBoards, addBoard, getBoard };
+module.exports = { getAllBoards, addBoard, getBoard, updateBoard };
