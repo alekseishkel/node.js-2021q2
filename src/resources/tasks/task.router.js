@@ -12,7 +12,7 @@ router.route('/:boardId/tasks/:taskId').get(async (req, res) => {
   if (task) {
     res.status(200).json(task);
   } else {
-    res.status(404).json('Board not found');
+    res.status(404).json('Task not found');
   }
 });
 
@@ -27,18 +27,18 @@ router.route('/:boardId/tasks/:taskId').put(async (req, res) => {
   if (task) {
     res.status(200).json(task);
   } else {
-    res.status(404).json('Board not found');
+    res.status(404).json('Task not found');
   }
 });
 
-// router.route('/:id').delete(async (req, res) => {
-//   const board = await boardService.deleteBoard(req.params.id);
+router.route('/:boardId/tasks/:taskId').delete(async (req, res) => {
+  const board = await taskService.deleteTask(req.params.taskId);
 
-//   if (board) {
-//     res.status(200).json(board);
-//   } else {
-//     res.status(404).json('Board not found');
-//   }
-// });
+  if (board) {
+    res.status(200).json(board);
+  } else {
+    res.status(404).json('Task not found');
+  }
+});
 
 module.exports = router;

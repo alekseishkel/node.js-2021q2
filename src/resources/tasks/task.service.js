@@ -17,6 +17,6 @@ const updateTask = (id, taskData) => {
   return tasksRepo.updateTask(id, task);
 };
 
-// const deleteBoard = (id) => boardsRepo.deleteBoard(id);
+const deleteTask = (id) => tasksRepo.deleteTask(id);
 
-module.exports = { getAllTasks, addTask, getTask, updateTask };
+module.exports = { getAllTasks, addTask, getTask, updateTask, deleteTask };

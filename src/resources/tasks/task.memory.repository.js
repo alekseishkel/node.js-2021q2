@@ -13,7 +13,7 @@ const updateTask = async (id, {title, order, description, userId, boardId, colum
   const updatingTask = await getTask(id);
 
   if (updatingTask) {
-    const updatingTaskIndex = tasks.findIndex(board => board.id === id);
+    const updatingTaskIndex = tasks.findIndex(task => task.id === id);
     updatedTask = {...updatingTask, title, order, description, userId, boardId, columnId};
     tasks[updatingTaskIndex] = updatedTask; 
   } else {
@@ -23,15 +23,15 @@ const updateTask = async (id, {title, order, description, userId, boardId, colum
   return updatedTask;
 };
 
-// const deleteBoard = async (id) => {
-//   const deletingBoard = await getBoard(id);
+const deleteTask = async (id) => {
+  const deletingTask = await getTask(id);
   
-//   if (deletingBoard) {
-//     const deletingingBoardIndex = boards.findIndex(board => board.id === id);
-//     boards.splice(deletingingBoardIndex, 1);
-//   }
+  if (deletingTask) {
+    const deletingingTaskIndex = tasks.findIndex(task => task.id === id);
+    tasks.splice(deletingingTaskIndex, 1);
+  }
   
-//   return deletingBoard;
-// };
+  return deletingTask;
+};
 
-module.exports = { getAllTasks, addTask, getTask, updateTask };
+module.exports = { getAllTasks, addTask, getTask, updateTask, deleteTask };
