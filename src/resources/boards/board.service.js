@@ -1,16 +1,16 @@
-const usersRepo = require('./board.memory.repository');
+const boardsRepo = require('./board.memory.repository');
 const User = require('./board.model');
 
-const getAllBoards = () => usersRepo.getAllBoards();
+const getAllBoards = () => boardsRepo.getAllBoards();
 
-// const getUser = (id) => usersRepo.getUser(id);
+const getBoard = (id) => boardsRepo.getBoard(id);
 
-// const addUser = (userData) => {
-//   const user = new User(userData);
-//   usersRepo.addUser(user);
+const addBoard = (boardData) => {
+  const board = new User(boardData);
+  boardsRepo.addBoard(board);
 
-//   return user;
-// };
+  return board;
+};
 
 // const updateUser = (id, userData) => {
 //   const user = new User(userData);
@@ -19,4 +19,4 @@ const getAllBoards = () => usersRepo.getAllBoards();
 
 // const deleteUser = (id) => usersRepo.deleteUser(id);
 
-module.exports = { getAllBoards };
+module.exports = { getAllBoards, addBoard, getBoard };

@@ -9,12 +9,18 @@ const addUser = async (user) => {
 };
 
 const updateUser = async (id, {name, login, password}) => {
+  let updatedUser;
   const updatingUser = await getUser(id);
-  const updatingUserIndex = users.findIndex(user => user.id === id);
-  const updatedUser = {...updatingUser, name, login, password};
-  users[updatingUserIndex] = updatedUser; 
 
-  return updateUser
+  if (updatingUser) {
+    const updatingUserIndex = users.findIndex(user => user.id === id);
+    updatedUser = {...updatingUser, name, login, password};
+    users[updatingUserIndex] = updatedUser; 
+  } else {
+    updatedUser = undefined;
+  }
+
+  return updatedUser;
 };
 
 const deleteUser = async (id) => {

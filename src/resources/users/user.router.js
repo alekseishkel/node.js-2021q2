@@ -8,8 +8,13 @@ router.route('/').get(async (req, res) => {
 });
 
 router.route('/:id').get(async (req, res) => {
-  const user = await usersService.getUser(req.params.id);
-  res.json(User.toResponse(user));
+  const user = await usersService.getUser(req.params.id) || "User no found";
+
+  if (typeof user === "object") {
+    res.json(User.toResponse(user));
+  } else {
+    res.json(user);
+  }
 });
 
 router.route('/').post(async (req, res) => {
@@ -18,13 +23,22 @@ router.route('/').post(async (req, res) => {
 });
 
 router.route('/:id').put(async (req, res) => {
-  const user = await usersService.updateUser(req.params.id, req.body);
-  res.json(User.toResponse(user));
+  const user = await usersService.updateUser(req.params.id, req.body) || "User no found";
+
+  if (typeof user === "object") {
+    res.json(User.toResponse(user));
+  } else {
+    res.json(user);
+  }
 });
 
 router.route('/:id').delete(async (req, res) => {
-  const user = await usersService.deleteUser(req.params.id);
-  res.json(User.toResponse(user));
+  const user = await usersService.deleteUser(req.params.id) || "User no found";
+  if (typeof user === "object") {
+    res.json(User.toResponse(user));
+  } else {
+    res.json(user);
+  }
 });
 
 module.exports = router;

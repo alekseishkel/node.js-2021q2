@@ -2,11 +2,11 @@ const boards = [];
 
 const getAllBoards = async () => boards;
 
-// const getUser = async (id) => users.find(user => user.id === id);
+const getBoard = async (id) => boards.find(board => board.id === id);
 
-// const addUser = async (user) => {
-//   users.push(user);
-// };
+const addBoard = async (board) => {
+  boards.push(board);
+};
 
 // const updateUser = async (id, {name, login, password}) => {
 //   const updatingUser = await getUser(id);
@@ -24,4 +24,4 @@ const getAllBoards = async () => boards;
 //   return deletingUser;
 // }
 
-module.exports = { getAllBoards };
+module.exports = { getAllBoards, addBoard, getBoard };

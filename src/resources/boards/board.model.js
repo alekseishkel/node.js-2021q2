@@ -4,7 +4,13 @@ class Board {
   constructor({
     id = uuidv4(),
     title = 'BOARD',
-    columns = [],
+    columns = [
+      {
+        id: uuidv4(),
+        title: "COLUMN",
+        order: 0
+      }
+    ],
   } = {}) {
     this.id = id;
     this.title = title;
