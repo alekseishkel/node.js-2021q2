@@ -42,7 +42,8 @@ const updateBoard = (id, boardData) => {
 };
 
 /**
- * Passes the board id to the repository
+ * Passes the id of the board that needs to be deleted 
+ * to the repository
  * @param {string} id of deleting board
  * @returns {Board} Deleted board
  */
