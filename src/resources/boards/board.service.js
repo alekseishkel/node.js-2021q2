@@ -11,7 +11,7 @@ const getAllBoards = () => boardsRepo.getAllBoards();
  * Passes the board id to the boards repository 
  * and gets the board by this id
  * @param {string} id of the requested board 
- * @returns {Promise<Board>} Promise object represents the Board
+ * @returns {Promise<Board>} Promise object represents the board
  */
 const getBoard = (id) => boardsRepo.getBoard(id);
 
