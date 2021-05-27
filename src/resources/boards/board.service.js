@@ -3,7 +3,7 @@ const Board = require('./board.model');
 
 /**
  * Gets all the boards from the boards repository
- * @returns {Array<Board>} Array of boards
+ * @returns {Promise<Array<Board>>} Promise object represents the array of boards
  */
 const getAllBoards = () => boardsRepo.getAllBoards();
 
@@ -11,7 +11,7 @@ const getAllBoards = () => boardsRepo.getAllBoards();
  * Passes the board id to the boards repository 
  * and gets the board by this id
  * @param {string} id of the requested board 
- * @returns {Board} Board
+ * @returns {Promise<Board>} Promise object represents the Board
  */
 const getBoard = (id) => boardsRepo.getBoard(id);
 
@@ -34,7 +34,7 @@ const addBoard = (boardData) => {
  * that needs to be updated to the repository 
  * @param {string} id of updating board
  * @param {object} boardData - the data for the new board
- * @returns {Board} Updated board
+ * @returns {Promise<Board>} Promise object represents the updated board
  */
 const updateBoard = (id, boardData) => {
   const board = new Board(boardData);
@@ -45,7 +45,7 @@ const updateBoard = (id, boardData) => {
  * Passes the id of the board that needs to be deleted 
  * to the repository
  * @param {string} id of deleting board
- * @returns {Board} Deleted board
+ * @returns {Promise<Board>} Promise object represents the deleted board
  */
 const deleteBoard = (id) => boardsRepo.deleteBoard(id);
 

@@ -3,7 +3,7 @@ const Task = require('./task.model');
 
 /**
  * Gets all the tasks from the tasks repository
- * @returns {Array<Task>} Array of tasks
+ * @returns {Promise<Array<Task>>} Promise object represents the array of tasks
  */
 const getAllTasks = () => tasksRepo.getAllTasks();
 
@@ -11,7 +11,7 @@ const getAllTasks = () => tasksRepo.getAllTasks();
  * Passes the task id to the tasks repository 
  * and gets the task by this id
  * @param {string} id of the requested task
- * @returns {Task} Task
+ * @returns {Promise<Task>} Promise object represents the task
  */
 const getTask = (id) => tasksRepo.getTask(id);
 
@@ -38,7 +38,7 @@ const addTask = (taskData, boardId) => {
  * @param {string} taskId - id of updating task
  * @param {string} boardId - id of the connected board
  * @param {object} taskData - the data for the new task
- * @returns {Task} Updated task
+ * @returns {Promise<Task>} Promise object represents the updated task
  */
 const updateTask = (taskId, boardId, taskData) => {
   const task = new Task(taskData, boardId);
@@ -49,7 +49,7 @@ const updateTask = (taskId, boardId, taskData) => {
  * Passes the id of the task that needs to be deleted 
  * to the task repository
  * @param {string} id of deleting task
- * @returns {Task} Deleted task
+ * @returns {Promise<Task>} Promise object represents the deleted task
  */
 const deleteTask = (id) => tasksRepo.deleteTask(id);
 
