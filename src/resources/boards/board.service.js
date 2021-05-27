@@ -31,7 +31,7 @@ const addBoard = (boardData) => {
 /**
  * Сreates a new board depending on the received data
  * and passes this board and the id of the board
- * that needs to be updated in the repository 
+ * that needs to be updated to the repository 
  * @param {string} id of updating board
  * @param {object} boardData - the data for the new board
  * @returns {Board} Updated board
