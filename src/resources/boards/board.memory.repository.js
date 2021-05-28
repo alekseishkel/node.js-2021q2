@@ -8,7 +8,7 @@ const getAllBoards = async () => boards;
 
 /**
  * Gets the board by id from the "database"
- * @param {string} id of the requested board 
+ * @param {string} id - id of the requested board 
  * @returns {Promise<Board>} Promise object represents the board
  */
 const getBoard = async (id) => boards.find(board => board.id === id);
@@ -22,7 +22,7 @@ const addBoard = async (board) => boards.push(board);
 
 /**
  * Updates a board depending on the received data
- * @param {string} id of updating board
+ * @param {string} id - id of updating board
  * @param {Board} Board - the new board
  * @returns {Promise<Board>} Promise object represents the updated board
  */
@@ -43,7 +43,7 @@ const updateBoard = async (id, {title, columns}) => {
 
 /**
  * Deletes the board from the "database"
- * @param {string} id of deleting board
+ * @param {string} id - id of deleting board
  * @returns {Promise<Board>} Promise object represents the deleted board
  */
 const deleteBoard = async (id) => {

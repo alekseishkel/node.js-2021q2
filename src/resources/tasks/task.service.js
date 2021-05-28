@@ -10,7 +10,7 @@ const getAllTasks = () => tasksRepo.getAllTasks();
 /**
  * Passes the task id to the tasks repository 
  * and gets the task by this id
- * @param {string} id of the requested task
+ * @param {string} id - id of the requested task
  * @returns {Promise<Task>} Promise object represents the task
  */
 const getTask = (id) => tasksRepo.getTask(id);
@@ -48,7 +48,7 @@ const updateTask = (taskId, boardId, taskData) => {
 /**
  * Passes the id of the task that needs to be deleted 
  * to the task repository
- * @param {string} id of deleting task
+ * @param {string} id - id of deleting task
  * @returns {Promise<Task>} Promise object represents the deleted task
  */
 const deleteTask = (id) => tasksRepo.deleteTask(id);

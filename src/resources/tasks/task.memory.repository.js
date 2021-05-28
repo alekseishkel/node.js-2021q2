@@ -8,7 +8,7 @@ const getAllTasks = async () => tasks;
 
 /**
  * Gets the task by id from the "database"
- * @param {string} id of the requested task 
+ * @param {string} id - id of the requested task 
  * @returns {Promise<Task>} Promise object represents the task
  */
 const getTask = async (id) => tasks.find(task => task.id === id);
@@ -24,7 +24,7 @@ const addTask = async (task) => {
 
 /**
  * Updates a task depending on the received data
- * @param {string} id of updating task
+ * @param {string} id - id of updating task
  * @param {Task} Task - the new task
  * @returns {Promise<Task>} Promise object represents the updated task
  */
@@ -45,7 +45,7 @@ const updateTask = async (id, {title, order, description, userId, boardId, colum
 
 /**
  * Deletes the task from the "database"
- * @param {string} id of deleting task
+ * @param {string} id - id of deleting task
  * @returns {Promise<Task>} Promise object represents the deleted task
  */
 const deleteTask = async (id) => {

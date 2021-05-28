@@ -8,7 +8,7 @@ const getAllUsers = async () => users;
 
 /**
  * Gets the user by id from the "database"
- * @param {string} id of the requested user 
+ * @param {string} id - id of the requested user 
  * @returns {Promise<User>} Promise object represents the user
  */
 const getUser = async (id) => users.find(user => user.id === id);
@@ -24,7 +24,7 @@ const addUser = async (user) => {
 
 /**
  * Updates a user depending on the received data
- * @param {string} id of updating user
+ * @param {string} id - id of updating user
  * @param {User} User - the new user
  * @returns {Promise<User>} Promise object represents the updated user
  */
@@ -45,7 +45,7 @@ const updateUser = async (id, {name, login, password}) => {
 
 /**
  * Deletes the user from the "database"
- * @param {string} id of deleting user
+ * @param {string} id - id of deleting user
  * @returns {Promise<User>} Promise object represents the deleted user
  */
 const deleteUser = async (id) => {
