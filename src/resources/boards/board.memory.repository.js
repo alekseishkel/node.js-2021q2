@@ -1,13 +1,13 @@
 const boards = [];
 
 /**
- * Gets all the boards from the boards "database"
+ * Gets all the boards from the "database"
  * @returns {Promise<Array<Board>>} Promise object represents the array of boards
  */
 const getAllBoards = async () => boards;
 
 /**
- * Gets the board by id from the boards "database"
+ * Gets the board by id from the "database"
  * @param {string} id of the requested board 
  * @returns {Promise<Board>} Promise object represents the board
  */
@@ -23,8 +23,7 @@ const addBoard = async (board) => boards.push(board);
 /**
  * Updates a board depending on the received data
  * @param {string} id of updating board
- * @param {string} title - new title of updating board
- * @param {array<object>} columns - new columns of updating board
+ * @param {Board} Board - the new board
  * @returns {Promise<Board>} Promise object represents the updated board
  */
 const updateBoard = async (id, {title, columns}) => {

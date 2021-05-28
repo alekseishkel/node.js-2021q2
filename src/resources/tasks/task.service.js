@@ -57,7 +57,7 @@ const deleteTask = (id) => tasksRepo.deleteTask(id);
  * Passes the id of the board whose tasks needs to be deleted
  * when this board deleted to the task repository
  * @param {string} boardId - id of the connected board
- * @returns {void}
+ * @returns {Promise<void>}
  */
 const deleteBoardTasks = (boardId) => tasksRepo.deleteBoardTasks(boardId);
 
@@ -65,7 +65,7 @@ const deleteBoardTasks = (boardId) => tasksRepo.deleteBoardTasks(boardId);
  * Passes the id of the user whose tasks needs to be deleted
  * when this user deleted to the task repository
  * @param {string} userId - id of the connected user
- * @returns {void}
+ * @returns {Promise<void>}
  */
 const deleteUserTasks = (userId) => tasksRepo.deleteUserTasks(userId);
 
