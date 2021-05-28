@@ -1,13 +1,32 @@
 const boards = [];
 
+/**
+ * Gets all the boards from the boards "database"
+ * @returns {Promise<Array<Board>>} Promise object represents the array of boards
+ */
 const getAllBoards = async () => boards;
 
+/**
+ * Gets the board by id from the boards "database"
+ * @param {string} id of the requested board 
+ * @returns {Promise<Board>} Promise object represents the board
+ */
 const getBoard = async (id) => boards.find(board => board.id === id);
 
-const addBoard = async (board) => {
-  boards.push(board);
-};
+/**
+ * Add a new board to the "database"
+ * @param {object} board - Board
+ * @returns {Promise<boards.length>} - new length of boards array
+ */
+const addBoard = async (board) => boards.push(board);
 
+/**
+ * Updates a board depending on the received data
+ * @param {string} id of updating board
+ * @param {string} title - new title of updating board
+ * @param {array<object>} columns - new columns of updating board
+ * @returns {Promise<Board>} Promise object represents the updated board
+ */
 const updateBoard = async (id, {title, columns}) => {
   let updatedBoard;
   const updatingBoard = await getBoard(id);
@@ -23,6 +42,11 @@ const updateBoard = async (id, {title, columns}) => {
   return updatedBoard;
 };
 
+/**
+ * Deletes the board from the "database"
+ * @param {string} id of deleting board
+ * @returns {Promise<Board>} Promise object represents the deleted board
+ */
 const deleteBoard = async (id) => {
   const deletingBoard = await getBoard(id);
   
