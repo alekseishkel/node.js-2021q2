@@ -26,3 +26,5 @@ interface IUser {
   login: string,
   password: string,
 };
+
+export {IBoard, IColumn, ITask, IUser};

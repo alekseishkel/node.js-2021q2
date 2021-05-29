@@ -69,4 +69,12 @@ const deleteBoardTasks = (boardId) => tasksRepo.deleteBoardTasks(boardId);
  */
 const deleteUserTasks = (userId) => tasksRepo.deleteUserTasks(userId);
 
-module.exports = { getAllTasks, addTask, getTask, updateTask, deleteTask, deleteBoardTasks, deleteUserTasks };
+export const tasksService = { 
+  getAllTasks, 
+  addTask, 
+  getTask, 
+  updateTask, 
+  deleteTask, 
+  deleteBoardTasks, 
+  deleteUserTasks 
+};

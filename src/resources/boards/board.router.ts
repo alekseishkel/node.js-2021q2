@@ -1,14 +1,17 @@
-const router = require('express').Router();
-const boardService = require('./board.service');
-const tasksService = require('../tasks/task.service');
+import { Request, Response } from 'express';
+import { boardService } from './board.service';
+import { tasksService } from '../tasks/task.service';
+import { IBoard } from '../../interfaces/interfaces';
 
-router.route('/').get(async (req, res) => {
-  const boards = await boardService.getAllBoards();
+const router = require('express').Router();
+
+router.route('/').get(async (_req: Request, res: Response): Promise<void> => {
+  const boards: Array<IBoard> = await boardService.getAllBoards();
   res.json(boards);
 });
 
-router.route('/:id').get(async (req, res) => {
-  const board = await boardService.getBoard(req.params.id);
+router.route('/:id').get(async (req: Request, res: Response) => {
+  const board : IBoard = await boardService.getBoard(req.params["id"]);
 
   if (board) {
     res.status(200).json(board);
@@ -17,13 +20,13 @@ router.route('/:id').get(async (req, res) => {
   }
 });
 
-router.route('/').post(async (req, res) => {
-  const board = await boardService.addBoard(req.body);
+router.route('/').post(async (req: Request, res: Response) => {
+  const board : IBoard = await boardService.addBoard(req.body);
   res.status(201).json(board);
 });
 
-router.route('/:id').put(async (req, res) => {
-  const board = await boardService.updateBoard(req.params.id, req.body);
+router.route('/:id').put(async (req: Request, res: Response) => {
+  const board : IBoard = await boardService.updateBoard(req.params["id"], req.body);
 
   if (board) {
     res.status(200).json(board);
@@ -32,9 +35,9 @@ router.route('/:id').put(async (req, res) => {
   }
 });
 
-router.route('/:id').delete(async (req, res) => {
-  const board = await boardService.deleteBoard(req.params.id);
-  await tasksService.deleteBoardTasks(req.params.id);
+router.route('/:id').delete(async (req: Request, res: Response) => {
+  const board : IBoard = await boardService.deleteBoard(req.params["id"]);
+  await tasksService.deleteBoardTasks(req.params["id"]);
 
   if (board) {
     res.status(200).json(board);

@@ -1,11 +1,12 @@
-const boardsRepo = require('./board.memory.repository');
-const Board = require('./board.model');
+import { boardsRepo } from './board.memory.repository';
+import { Board } from './board.model';
+import { IBoard } from '../../interfaces/interfaces';
 
 /**
  * Gets all the boards from the boards repository
  * @returns {Promise<Array<Board>>} Promise object represents the array of boards
  */
-const getAllBoards = () => boardsRepo.getAllBoards();
+const getAllBoards = () : Promise<Array<IBoard>> => boardsRepo.getAllBoards();
 
 /**
  * Passes the board id to the boards repository 
@@ -13,7 +14,7 @@ const getAllBoards = () => boardsRepo.getAllBoards();
  * @param {string} id - id of the requested board 
  * @returns {Promise<Board>} Promise object represents the board
  */
-const getBoard = (id) => boardsRepo.getBoard(id);
+const getBoard = (id : string) : Promise<IBoard | undefined> => boardsRepo.getBoard(id);
 
 /**
  * Сreates a new board depending on the received data
@@ -21,8 +22,8 @@ const getBoard = (id) => boardsRepo.getBoard(id);
  * @param {object} boardData - the data for the new board
  * @returns {Board} Created board
  */
-const addBoard = (boardData) => {
-  const board = new Board(boardData);
+const addBoard = (boardData: IBoard) : IBoard => {
+  const board : IBoard = new Board(boardData);
   boardsRepo.addBoard(board);
 
   return board;
@@ -36,8 +37,8 @@ const addBoard = (boardData) => {
  * @param {object} boardData - the data for the new board
  * @returns {Promise<Board>} Promise object represents the updated board
  */
-const updateBoard = (id, boardData) => {
-  const board = new Board(boardData);
+const updateBoard = (id : string, boardData: IBoard) : Promise<IBoard | undefined> => {
+  const board : IBoard = new Board(boardData);
   return boardsRepo.updateBoard(id, board);
 };
 
@@ -47,6 +48,12 @@ const updateBoard = (id, boardData) => {
  * @param {string} id - id of deleting board
  * @returns {Promise<Board>} Promise object represents the deleted board
  */
-const deleteBoard = (id) => boardsRepo.deleteBoard(id);
+const deleteBoard = (id : string) : Promise<IBoard | undefined> => boardsRepo.deleteBoard(id);
 
-module.exports = { getAllBoards, addBoard, getBoard, updateBoard, deleteBoard };
+export const boardService = { 
+  getAllBoards, 
+  addBoard, 
+  getBoard, 
+  updateBoard, 
+  deleteBoard 
+};
