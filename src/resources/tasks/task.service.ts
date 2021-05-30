@@ -1,11 +1,12 @@
-const tasksRepo = require('./task.memory.repository');
-const Task = require('./task.model');
+import { tasksRepo } from './task.memory.repository';
+import { Task } from './task.model';
+import { ITask } from '../../interfaces/interfaces';
 
 /**
  * Gets all the tasks from the tasks repository
  * @returns {Promise<Array<Task>>} Promise object represents the array of tasks
  */
-const getAllTasks = () => tasksRepo.getAllTasks();
+const getAllTasks = () : Promise<Array<ITask>>=> tasksRepo.getAllTasks();
 
 /**
  * Passes the task id to the tasks repository 
@@ -13,7 +14,7 @@ const getAllTasks = () => tasksRepo.getAllTasks();
  * @param {string} id - id of the requested task
  * @returns {Promise<Task>} Promise object represents the task
  */
-const getTask = (id) => tasksRepo.getTask(id);
+const getTask = (id : string | undefined) : Promise<ITask | undefined> => tasksRepo.getTask(id);
 
 /**
  * Сreates a new task depending on the received data
@@ -23,8 +24,8 @@ const getTask = (id) => tasksRepo.getTask(id);
  * @param {string} boardId - id of the connected board
  * @returns {Task} Created task
  */
-const addTask = (taskData, boardId) => {
-  const task = new Task(taskData, boardId);
+const addTask = (taskData : object, boardId : string | undefined) : ITask => {
+  const task : ITask = new Task(taskData, boardId);
   tasksRepo.addTask(task);
 
   return task;
@@ -40,7 +41,7 @@ const addTask = (taskData, boardId) => {
  * @param {object} taskData - the data for the new task
  * @returns {Promise<Task>} Promise object represents the updated task
  */
-const updateTask = (taskId, boardId, taskData) => {
+const updateTask = (taskId : string | undefined, boardId : string | undefined, taskData : object) : Promise<ITask | undefined> => {
   const task = new Task(taskData, boardId);
   return tasksRepo.updateTask(taskId, task);
 };
@@ -51,7 +52,7 @@ const updateTask = (taskId, boardId, taskData) => {
  * @param {string} id - id of deleting task
  * @returns {Promise<Task>} Promise object represents the deleted task
  */
-const deleteTask = (id) => tasksRepo.deleteTask(id);
+const deleteTask = (id : string | undefined) : Promise<ITask | undefined> => tasksRepo.deleteTask(id);
 
 /**
  * Passes the id of the board whose tasks needs to be deleted
@@ -59,7 +60,7 @@ const deleteTask = (id) => tasksRepo.deleteTask(id);
  * @param {string} boardId - id of the connected board
  * @returns {Promise<void>}
  */
-const deleteBoardTasks = (boardId) => tasksRepo.deleteBoardTasks(boardId);
+const deleteBoardTasks = (boardId : string | undefined) : Promise<void> => tasksRepo.deleteBoardTasks(boardId);
 
 /**
  * Passes the id of the user whose tasks needs to be deleted
@@ -67,9 +68,9 @@ const deleteBoardTasks = (boardId) => tasksRepo.deleteBoardTasks(boardId);
  * @param {string} userId - id of the connected user
  * @returns {Promise<void>}
  */
-const deleteUserTasks = (userId) => tasksRepo.deleteUserTasks(userId);
+const deleteUserTasks = (userId : string | undefined) : Promise<void> => tasksRepo.deleteUserTasks(userId);
 
-export const tasksService = { 
+export const taskService = { 
   getAllTasks, 
   addTask, 
   getTask, 

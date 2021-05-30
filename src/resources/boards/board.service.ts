@@ -14,7 +14,7 @@ const getAllBoards = () : Promise<Array<IBoard>> => boardsRepo.getAllBoards();
  * @param {string} id - id of the requested board 
  * @returns {Promise<Board>} Promise object represents the board
  */
-const getBoard = (id : string) : Promise<IBoard | undefined> => boardsRepo.getBoard(id);
+const getBoard = (id : string | undefined) : Promise<IBoard | undefined> => boardsRepo.getBoard(id);
 
 /**
  * Сreates a new board depending on the received data
@@ -37,7 +37,7 @@ const addBoard = (boardData: IBoard) : IBoard => {
  * @param {object} boardData - the data for the new board
  * @returns {Promise<Board>} Promise object represents the updated board
  */
-const updateBoard = (id : string, boardData: IBoard) : Promise<IBoard | undefined> => {
+const updateBoard = (id : string | undefined, boardData: IBoard) : Promise<IBoard | undefined> => {
   const board : IBoard = new Board(boardData);
   return boardsRepo.updateBoard(id, board);
 };
@@ -48,7 +48,7 @@ const updateBoard = (id : string, boardData: IBoard) : Promise<IBoard | undefine
  * @param {string} id - id of deleting board
  * @returns {Promise<Board>} Promise object represents the deleted board
  */
-const deleteBoard = (id : string) : Promise<IBoard | undefined> => boardsRepo.deleteBoard(id);
+const deleteBoard = (id : string | undefined) : Promise<IBoard | undefined> => boardsRepo.deleteBoard(id);
 
 export const boardService = { 
   getAllBoards, 

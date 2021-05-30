@@ -13,7 +13,7 @@ const getAllBoards = async () : Promise<Array<IBoard>> => boards;
  * @param {string} id - id of the requested board 
  * @returns {Promise<Board>} Promise object represents the board
  */
-const getBoard = async (id : string) : Promise<IBoard | undefined> => 
+const getBoard = async (id : string | undefined) : Promise<IBoard | undefined> => 
   boards.find((board: IBoard) => board.id === id);
 
 /**
@@ -29,7 +29,7 @@ const addBoard = async (board: IBoard) : Promise<number> => boards.push(board);
  * @param {Board} Board - the new board
  * @returns {Promise<Board>} Promise object represents the updated board
  */
-const updateBoard = async (id : string, {title, columns} : IBoard) : Promise<IBoard | undefined> => {
+const updateBoard = async (id : string | undefined, {title, columns} : IBoard) : Promise<IBoard | undefined> => {
   let updatedBoard : IBoard | undefined;
   const updatingBoard : IBoard | undefined = await getBoard(id);
 
@@ -49,7 +49,7 @@ const updateBoard = async (id : string, {title, columns} : IBoard) : Promise<IBo
  * @param {string} id - id of deleting board
  * @returns {Promise<Board>} Promise object represents the deleted board
  */
-const deleteBoard = async (id : string) : Promise<IBoard | undefined> => {
+const deleteBoard = async (id : string | undefined) : Promise<IBoard | undefined> => {
   const deletingBoard : IBoard | undefined = await getBoard(id);
   
   if (deletingBoard) {
