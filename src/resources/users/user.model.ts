@@ -3,9 +3,13 @@ import { IUser } from '../../interfaces/interfaces';
 
 class User {
   id: string;
+
   name: string;
+
   login: string;
+
   password: string;
+
   constructor({
     id = uuidv4(),
     name = 'USER',
