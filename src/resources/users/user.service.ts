@@ -1,11 +1,12 @@
-const usersRepo = require('./user.memory.repository');
-const User = require('./user.model');
+import { IUser } from "../../interfaces/interfaces";
+import { usersRepo } from './user.memory.repository';
+import { User } from './user.model';
 
 /**
  * Gets all the users from the users repository
  * @returns {Promise<Array<User>>} Promise object represents the array of users
  */
-const getAllUsers = () => usersRepo.getAllUsers();
+const getAllUsers = () : Promise<Array<IUser>> => usersRepo.getAllUsers();
 
 /**
  * Passes the user id to the users repository 
@@ -13,7 +14,7 @@ const getAllUsers = () => usersRepo.getAllUsers();
  * @param {string} id - id of the requested user 
  * @returns {Promise<User>} Promise object represents the user
  */
-const getUser = (id) => usersRepo.getUser(id);
+const getUser = (id : string | undefined) : Promise<IUser | undefined> => usersRepo.getUser(id);
 
 /**
  * Сreates a new user depending on the received data
@@ -21,8 +22,8 @@ const getUser = (id) => usersRepo.getUser(id);
  * @param {object} userData - the data for the new user
  * @returns {User} Created user
  */
-const addUser = (userData) => {
-  const user = new User(userData);
+const addUser = (userData : object) : IUser => {
+  const user : IUser = new User(userData);
   usersRepo.addUser(user);
 
   return user;
@@ -36,8 +37,8 @@ const addUser = (userData) => {
  * @param {object} userData - the data for the new user
  * @returns {Promise<User>} Promise object represents the updated user
  */
-const updateUser = (id, userData) => {
-  const user = new User(userData);
+const updateUser = (id : string | undefined, userData : IUser) : Promise<IUser | undefined> => {
+  const user : IUser = new User(userData);
   return usersRepo.updateUser(id, user);
 };
 
@@ -47,6 +48,12 @@ const updateUser = (id, userData) => {
  * @param {string} id - id of deleting user
  * @returns {Promise<User>} Promise object represents the deleted user
  */
-const deleteUser = (id) => usersRepo.deleteUser(id);
+const deleteUser = (id : string | undefined) : Promise<IUser | undefined> => usersRepo.deleteUser(id);
 
-module.exports = { getAllUsers, getUser, addUser, updateUser, deleteUser };
+export const usersService = { 
+  getAllUsers, 
+  getUser, 
+  addUser, 
+  updateUser, 
+  deleteUser
+};

@@ -22,7 +22,7 @@ const getBoard = (id : string | undefined) : Promise<IBoard | undefined> => boar
  * @param {object} boardData - the data for the new board
  * @returns {Board} Created board
  */
-const addBoard = (boardData: IBoard) : IBoard => {
+const addBoard = (boardData: object) : IBoard => {
   const board : IBoard = new Board(boardData);
   boardsRepo.addBoard(board);
 
