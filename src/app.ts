@@ -22,7 +22,7 @@ app.use('/', (req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-app.use(logHandler);
+app.use('/', logHandler);
 
 app.use('/users', userRouter);
 app.use('/boards', boardRouter, taskRouter);
