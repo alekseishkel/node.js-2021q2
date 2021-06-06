@@ -9,7 +9,7 @@ const errorHandler = (
   _next: NextFunction
 ): void => {
   const message = 'Internal Server Error';
-  logError(`${error.toString()}. ${message}`);
+  logError(`${error.message}. ${message}`);
   res.status(500).send(message);
 };
 

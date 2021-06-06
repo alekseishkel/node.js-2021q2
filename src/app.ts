@@ -7,12 +7,13 @@ import { router as boardRouter } from './resources/boards/board.router';
 import { router as taskRouter } from './resources/tasks/task.router';
 import { logHandler } from './middleware/logHandler';
 import { errorHandler } from './middleware/errorHandler';
-import { uncaughtException } from './utils/errorsListeners';
+import { uncaughtException, unhandledRejection } from './utils/errorsListeners'; 
 
 const app = express();
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
 
 process.on('uncaughtException', uncaughtException);
+process.on('unhandledRejection', unhandledRejection);
 
 app.use(express.json());
 
