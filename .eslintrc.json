@@ -1,6 +1,6 @@
 {
-  "root": true,
-  "env": {
+    "root": true,
+    "env": {
     "es2020": true,
     "jasmine": true,
     "jest": true,
@@ -14,19 +14,28 @@
     }
   },
   "settings": {
-    "noInlineConfig": true
+    "noInlineConfig": true,
+    "allowKeywords": false,
+    "allowPattern": true
   },
   "extends": [
     "eslint:recommended",
     "plugin:node/recommended",
     "airbnb-base",
-    "prettier"
+    "prettier",
+    "plugin:import/typescript"
   ],
   "rules": {
     "import/extensions": "off",
     "linebreak-style": "off",
     "node/no-unsupported-features/es-syntax": "off",
     "no-underscore-dangle": "off",
-    "import/prefer-default-export": "off"
-  }
+    "import/prefer-default-export": "off",
+    "node/no-missing-import": ["error", {
+      "tryExtensions": [".js", ".json", ".ts"]
+    }],
+    "dot-notation": 0
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"]
 }
