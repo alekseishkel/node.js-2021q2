@@ -1,6 +1,6 @@
 # RS School REST service
 
-## Running application with the docker
+## Running application with Docker
 
 To build images
 ```
