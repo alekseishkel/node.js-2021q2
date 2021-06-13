@@ -2,6 +2,7 @@ version: '3'
 services: 
   node:
     build: .
+    image: lexashkel/node
     ports:
       - ${PORT}:${PORT}
     depends_on:
@@ -10,9 +11,13 @@ services:
       - PORT=4000
     networks:
       - docker-network
-    restart: on-failure 
+    restart: on-failure
+    volumes:
+      - ./src:/alekseishkel/node-js-docker/src
+      - ./logs:/alekseishkel/node-js-docker/logs
   postgres:
     build: ./database
+    image: lexashkel/postgres
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
     environment:
@@ -21,7 +26,9 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     networks:
       - docker-network
-    restart: on-failure 
+    restart: on-failure
+    volumes:
+      - ./db:/var/lib/postgresql/data
 networks:
   docker-network:
     driver: bridge
