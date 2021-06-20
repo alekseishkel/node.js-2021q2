@@ -15,4 +15,5 @@ export const config = {
   USER: process.env["POSTGRES_USER"],
   PASSWORD: process.env["POSTGRES_PASSWORD"],
   DATABASE: process.env["POSTGRES_DB"],
+  PG_PORT: process.env["POSTGRES_PORT"]
 };

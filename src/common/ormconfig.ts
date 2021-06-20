@@ -4,7 +4,7 @@ import { config } from './config'
 export const ormConfig = {
   type: 'postgres',
   name: 'rs-node-js',
-  port: config.PORT,
+  port: config.PG_PORT,
   host: config.HOST,
   database: config.DATABASE,
   username: config.USER,
