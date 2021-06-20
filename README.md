@@ -1,5 +1,17 @@
 # RS School REST service
 
+## Running application with Docker
+
+To build images
+```
+docker compose build
+```
+
+To start application
+```
+docker compose up
+```
+
 ## Prerequisites
 
 - Git - [Download & Install Git](https://git-scm.com/downloads).
