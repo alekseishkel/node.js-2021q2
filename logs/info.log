@@ -175,3 +175,13 @@
 {"message":"    Method: GET, URL: /boards, body: {\"title\":\"Firks22\",\"order\":2}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
 {"message":"    Method: GET, URL: /users, body: {\"title\":\"Firks22\",\"order\":2}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
 {"message":"   unhandledRejection: No repository for \"UserEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"    Method: POST, URL: /users, body: {\"name\":\"alex\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"UserEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"    Method: GET, URL: /users, body: {\"name\":\"alex\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"UserEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"    Method: PUT, URL: /users/25425c0b-9456-422f-ab8e-f796a1cd7d4d, body: {\"name\":\"alex2\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"UserEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   uncaughtException: ⨯ Unable to compile TypeScript:\nsrc/common/ormconfig.ts(6,1): error TS6133: 'UserEntity' is declared but its value is never read.\nsrc/common/ormconfig.ts(6,28): error TS2307: Cannot find module '../entities/tuser.entity' or its corresponding type declarations.\n","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"    Method: GET, URL: /users/, body: {\"name\":\"alex2\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: POST, URL: /users/, body: {\"name\":\"alex2\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: GET, URL: /users/, body: {\"name\":\"alex2\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
