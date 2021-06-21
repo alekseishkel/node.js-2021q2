@@ -2,7 +2,7 @@ import { DeleteResult, getRepository } from 'typeorm';
 import { ITask } from '../../interfaces/interfaces';
 import { TaskEntity } from '../../entities/task.entity';
 import { BoardEntity } from '../../entities/board.entity';
-// import { UserEntity } from '../../entities/user.entity';
+import { UserEntity } from '../../entities/user.entity';
 
 const getAllTasks = async (): Promise<Array<TaskEntity>> =>
   getRepository(TaskEntity).find();
@@ -38,7 +38,7 @@ const deleteTask = async (
 
 const deleteBoardTasks = async (boardId: string): Promise<DeleteResult> => getRepository(BoardEntity).delete(boardId);
 
-// const deleteUserTasks = async (userId: string | undefined): Promise<void> => getRepository(UserEntity).delete(userId);
+const deleteUserTasks = async (userId: string): Promise<DeleteResult> => getRepository(UserEntity).delete(userId);
 
 export const tasksRepo = {
   getAllTasks,
@@ -47,5 +47,5 @@ export const tasksRepo = {
   updateTask,
   deleteTask,
   deleteBoardTasks,
-  // deleteUserTasks,
+  deleteUserTasks,
 };

@@ -24,7 +24,7 @@ const deleteTask = (id : string) : Promise<DeleteResult> => tasksRepo.deleteTask
 
 const deleteBoardTasks = (boardId : string) : Promise<DeleteResult> => tasksRepo.deleteBoardTasks(boardId);
 
-// const deleteUserTasks = (userId : string) : Promise<DeleteResult> => tasksRepo.deleteUserTasks(userId);
+const deleteUserTasks = (userId : string) : Promise<DeleteResult> => tasksRepo.deleteUserTasks(userId);
 
 export const taskService = { 
   getAllTasks, 
@@ -33,5 +33,5 @@ export const taskService = {
   updateTask, 
   deleteTask, 
   deleteBoardTasks, 
-  // deleteUserTasks 
+  deleteUserTasks 
 };
