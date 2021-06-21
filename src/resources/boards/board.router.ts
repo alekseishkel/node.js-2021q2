@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { DeleteResult } from 'typeorm';
 import { boardService } from './board.service';
-import { taskService } from '../tasks/task.service';
+// import { taskService } from '../tasks/task.service';
 import { IBoard } from '../../interfaces/interfaces';
 import { BoardEntity } from '../../entities/board.entity';
 
@@ -39,7 +39,7 @@ router.route('/:id').put(async (req: Request, res: Response) : Promise<void> => 
 
 router.route('/:id').delete(async (req: Request, res: Response) : Promise<void> => {
   const board : DeleteResult = await boardService.deleteBoard(req.params["id"]!);
-  await taskService.deleteBoardTasks(req.params["id"]);
+  // await taskService.deleteBoardTasks(req.params["id"]);
 
   if (board) {
     res.status(200).json(board);

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { User } from "./user.model";
-import { taskService } from '../tasks/task.service';
+// import { taskService } from '../tasks/task.service';
 import { usersService } from './user.service';
 import { IUser } from '../../interfaces/interfaces';
 
@@ -38,7 +38,7 @@ router.route('/:id').put(async (req : Request, res : Response) : Promise<void> =
 
 router.route('/:id').delete(async (req : Request, res : Response) : Promise<void> => {
   const user : IUser | undefined = await usersService.deleteUser(req.params["id"]);
-  await taskService.deleteUserTasks(req.params["id"]);
+  // await taskService.deleteUserTasks(req.params["id"]);
 
   if (user) {
     res.status(200).json(user);

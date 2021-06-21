@@ -79,3 +79,48 @@
 {"message":"    Method: GET, URL: /boards, body: {\"id\":\"a2eef45c-610e-496c-81a0-37d141d5ecf2\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
 {"message":"    Method: POST, URL: /boards, body: {\"title\":\"loma2\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
 {"message":"    Method: GET, URL: /boards, body: {\"title\":\"loma2\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: POST, URL: /boards, body: {\"title\":\"First game ever\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: POST, URL: /tasks, body: {\"title\":\"First game ever\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: GET, URL: /tasks, body: {\"title\":\"First game ever\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: GET, URL: /tasks, body: {\"title\":\"First game ever\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: GET, URL: /boards, body: {\"title\":\"First game ever\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: GET, URL: /8488118b-499c-46f3-8674-d22c08ab0248/boards, body: {\"title\":\"First game ever\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: GET, URL: /8488118b-499c-46f3-8674-d22c08ab0248/tasks, body: {\"title\":\"First game ever\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: GET, URL: /8488118b-499c-46f3-8674-d22c08ab0248/tasks, body: {\"title\":\"First game ever\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: GET, URL: /8488118b-499c-46f3-8674-d22c08ab0248/tasks, body: {}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: GET, URL: /8488118b-499c-46f3-8674-d22c08ab0248/tasks, body: {\"title\":\"First game ever\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: GET, URL: /boards, body: {\"title\":\"First game ever\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: GET, URL: /6b9fdfff-8c68-4020-ba08-a7b49bda5b8b, body: {\"title\":\"First game ever\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: GET, URL: /6b9fdfff-8c68-4020-ba08-a7b49bda5b8b/tasks, body: {\"title\":\"First game ever\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: POST, URL: /6b9fdfff-8c68-4020-ba08-a7b49bda5b8b/tasks, body: {\"title\":\"First game ever - column\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"    Method: POST, URL: /boards/6b9fdfff-8c68-4020-ba08-a7b49bda5b8b/tasks, body: {\"title\":\"First game ever - column\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"TaskEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"    Method: GET, URL: /boards/6b9fdfff-8c68-4020-ba08-a7b49bda5b8b/tasks, body: {\"title\":\"First game ever - column\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"TaskEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"192.168.176.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"192.168.192.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"192.168.240.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.21.0.2","port":5437,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"    Method: GET, URL: /boards, body: {\"title\":\"First game ever\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"BoardEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.21.0.3","port":5437,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.21.0.2","port":5437,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.21.0.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.25.0.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   Unexpected token } in JSON at position 50. Internal Server Error","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"    Method: POST, URL: /boards, body: {\"title\":\"First game ever\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"BoardEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"    Method: POST, URL: /boards, body: {\"title\":\"First game ever23\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"BoardEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"    Method: GET, URL: /boards, body: {\"title\":\"First game ever23\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"BoardEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.25.0.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"    Method: GET, URL: /boards, body: {\"title\":\"First game ever23\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"BoardEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"    Method: POST, URL: /boards, body: {\"title\":\"First game ever23\"}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"BoardEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"    Method: GET, URL: /boards, body: {}, query: {}, statusCode: 200","level":"\u001b[32m\u001b[32minfo\u001b[32m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"BoardEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.27.0.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.27.0.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.27.0.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}

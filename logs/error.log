@@ -67,3 +67,25 @@
 {"message":"   unhandledRejection: Connection \"default\" was not found.","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
 {"message":"   Unexpected token t in JSON at position 7. Internal Server Error","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
 {"message":"   Unexpected token } in JSON at position 54. Internal Server Error","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"TaskEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"TaskEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"192.168.176.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"192.168.192.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"192.168.240.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.21.0.2","port":5437,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"BoardEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.21.0.3","port":5437,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.21.0.2","port":5437,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.21.0.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.25.0.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   Unexpected token } in JSON at position 50. Internal Server Error","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"BoardEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"BoardEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"BoardEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.25.0.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"BoardEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"BoardEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"BoardEntity\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.27.0.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.27.0.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.27.0.2","port":5436,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}

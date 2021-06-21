@@ -1,58 +1,51 @@
 import { DeleteResult, getRepository } from 'typeorm';
 import { ITask } from '../../interfaces/interfaces';
 import { TaskEntity } from '../../entities/task.entity';
+import { BoardEntity } from '../../entities/board.entity';
+// import { UserEntity } from '../../entities/user.entity';
 
-let tasks : Array<ITask> = [];
+const getAllTasks = async (): Promise<Array<TaskEntity>> =>
+  getRepository(TaskEntity).find();
 
-const getAllTasks = async () : Promise<Array<ITask>> => tasks;
+const getTask = async (
+  id: string | undefined
+): Promise<TaskEntity | undefined> => getRepository(TaskEntity).findOne(id);
 
-const getTask = async (id : string | undefined) : Promise<ITask | undefined> => 
-  tasks.find((task : ITask) => task.id === id);
+const addTask = async (task: ITask): Promise<TaskEntity> =>
+  getRepository(TaskEntity).save(task);
 
-const addTask = async (task : ITask) : Promise<number> => tasks.push(task);
+const updateTask = async (
+  id: string | undefined,
+  { title, order, description, userId, boardId, columnId }: ITask
+): Promise<TaskEntity | undefined> => {
+  const taskRepository = await getRepository(TaskEntity);
+  const updatingTask: TaskEntity | undefined = await taskRepository.findOne(id);
 
-const updateTask = 
-  async (id : string | undefined, {title, order, description, userId, boardId, columnId} : ITask)
-    : Promise<ITask | undefined> => {
-      let updatedTask : ITask | undefined;
-      const updatingTask : ITask | undefined = await getTask(id);
-
-      if (updatingTask) {
-        const updatingTaskIndex : number = tasks.findIndex((task : ITask) => task.id === id);
-        updatedTask = {...updatingTask, title, order, description, userId, boardId, columnId};
-        tasks[updatingTaskIndex] = updatedTask; 
-      } else {
-        updatedTask = undefined;
-      }
-
-      return updatedTask;
+  return taskRepository.save({
+    ...updatingTask,
+    title,
+      order,
+      description,
+      userId,
+      boardId,
+      columnId,
+  });
 };
 
-const deleteTask = async (id : string | undefined) : Promise<ITask | undefined> => {
-  const deletingTask : ITask | undefined = await getTask(id);
-  
-  if (deletingTask) {
-    const deletingingTaskIndex : number = tasks.findIndex((task : ITask) => task.id === id);
-    tasks.splice(deletingingTaskIndex, 1);
-  }
-  
-  return deletingTask;
-};
+const deleteTask = async (
+  id: string
+): Promise<DeleteResult> => getRepository(TaskEntity).delete(id);
 
-const deleteBoardTasks = async (boardId : string | undefined) : Promise<void> => {
-  tasks = tasks.filter((task : ITask) => task.boardId !== boardId);
-};
+const deleteBoardTasks = async (boardId: string): Promise<DeleteResult> => getRepository(BoardEntity).delete(boardId);
 
-const deleteUserTasks = async (userId : string | undefined) : Promise<void> => {
-  tasks = tasks.map((task : ITask) => task.userId === userId ? {...task, userId: null} : task);
-};
+// const deleteUserTasks = async (userId: string | undefined): Promise<void> => getRepository(UserEntity).delete(userId);
 
-export const tasksRepo = { 
-  getAllTasks, 
-  addTask, 
-  getTask, 
-  updateTask, 
-  deleteTask, 
-  deleteBoardTasks, 
-  deleteUserTasks
+export const tasksRepo = {
+  getAllTasks,
+  addTask,
+  getTask,
+  updateTask,
+  deleteTask,
+  deleteBoardTasks,
+  // deleteUserTasks,
 };

@@ -2,6 +2,7 @@ import { ConnectionOptions } from 'typeorm';
 import { config } from './config'
 import { BoardEntity } from '../entities/board.entity';
 import { ColumnEntity } from '../entities/column.entity';
+import { TaskEntity } from '../entities/task.entity';
 
 export const ormConfig = {
   type: 'postgres',
@@ -13,7 +14,7 @@ export const ormConfig = {
   autoReconnect: true,
   reconnectTries: Number.MAX_VALUE,
   reconnectionInterval: 1000,
-  entities: [BoardEntity, ColumnEntity],
+  entities: [BoardEntity, ColumnEntity, TaskEntity],
   synchronize: true,
   logging: false,
 } as ConnectionOptions;

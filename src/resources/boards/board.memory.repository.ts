@@ -17,9 +17,7 @@ const updateBoard = async (
   { title, columns }: IBoard
 ): Promise<BoardEntity | undefined> => {
   const boardRepository = await getRepository(BoardEntity);
-  const updatingBoard: BoardEntity | undefined = await boardRepository.findOne(
-    id
-  );
+  const updatingBoard: BoardEntity | undefined = await boardRepository.findOne(id);
 
   return boardRepository.save({
     ...updatingBoard,
@@ -30,7 +28,7 @@ const updateBoard = async (
 
 const deleteBoard = async (
   id: string
-): Promise<DeleteResult> => getRepository(BoardEntity).delete(id)
+): Promise<DeleteResult> => getRepository(BoardEntity).delete(id);
 
 export const boardsRepo = {
   getAllBoards,
