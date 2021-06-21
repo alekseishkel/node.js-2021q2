@@ -61,3 +61,7 @@
 {"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"192.168.240.2","port":4005,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
 {"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"192.168.240.2","port":4005,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
 {"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.21.0.2","port":4005,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.27.0.2","port":5435,"level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   unhandledRejection: Connection \"default\" was not found.","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   unhandledRejection: Connection \"default\" was not found.","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   unhandledRejection: Connection \"default\" was not found.","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}

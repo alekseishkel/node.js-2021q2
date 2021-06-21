@@ -1,4 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { ColumnEntity } from "./column.entity";
 
 @Entity({name: 'board'})
 export class BoardEntity {
@@ -9,6 +10,6 @@ export class BoardEntity {
   @Column('varchar', {length: 25})
   title?: string;
 
-  @Column({ type: 'json', nullable: true })
-  columns?: string;
+  @Column('jsonb', {nullable: true})
+  columns?: ColumnEntity[] | [];
 }

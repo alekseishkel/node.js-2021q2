@@ -1,9 +1,10 @@
 import { ConnectionOptions } from 'typeorm';
 import { config } from './config'
+import { BoardEntity } from '../entities/board.entity';
+import { ColumnEntity } from '../entities/column.entity';
 
 export const ormConfig = {
   type: 'postgres',
-  name: 'rs-node-js',
   port: config.PG_PORT,
   host: config.HOST,
   database: config.DATABASE,
@@ -12,4 +13,7 @@ export const ormConfig = {
   autoReconnect: true,
   reconnectTries: Number.MAX_VALUE,
   reconnectionInterval: 1000,
+  entities: [BoardEntity, ColumnEntity],
+  synchronize: true,
+  logging: false,
 } as ConnectionOptions;
