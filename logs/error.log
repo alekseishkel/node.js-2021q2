@@ -65,3 +65,5 @@
 {"message":"   unhandledRejection: Connection \"default\" was not found.","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
 {"message":"   unhandledRejection: Connection \"default\" was not found.","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
 {"message":"   unhandledRejection: Connection \"default\" was not found.","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   Unexpected token t in JSON at position 7. Internal Server Error","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   Unexpected token } in JSON at position 54. Internal Server Error","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
