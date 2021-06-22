@@ -17,7 +17,7 @@ export const ormConfig = {
   reconnectionInterval: 1000,
   entities: [BoardEntity, ColumnEntity, TaskEntity, UserEntity],
   migrationsRun: true,
-  synchronize: false,
+  synchronize: true,
   migrations: ["migration/*.js"],
   cli: {
     migrationsDir: "src/migration"

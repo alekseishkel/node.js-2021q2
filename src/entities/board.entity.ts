@@ -7,7 +7,7 @@ export class BoardEntity {
   @PrimaryGeneratedColumn('uuid')
   id?: string;
 
-  @Column('varchar', {length: 25})
+  @Column('varchar', {length: 100})
   title?: string;
 
   @Column('jsonb', {nullable: true})
