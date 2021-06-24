@@ -1,17 +1,20 @@
 import { Request, Response } from 'express';
+import { DeleteResult } from 'typeorm';
 import { boardService } from './board.service';
 import { taskService } from '../tasks/task.service';
 import { IBoard } from '../../interfaces/interfaces';
+import { BoardEntity } from '../../entities/board.entity';
 
 const router = require('express').Router();
 
 router.route('/').get(async (_req: Request, res: Response): Promise<void> => {
-  const boards: Array<IBoard> = await boardService.getAllBoards();
+  const boards: Array<BoardEntity> = await boardService.getAllBoards();
   res.json(boards);
+
 });
 
 router.route('/:id').get(async (req: Request, res: Response) : Promise<void> => {
-  const board : IBoard | undefined = await boardService.getBoard(req.params["id"]);
+  const board : BoardEntity | undefined = await boardService.getBoard(req.params["id"]);
   
   if (board) {
     res.status(200).json(board);
@@ -26,7 +29,7 @@ router.route('/').post(async (req: Request, res: Response) : Promise<void> => {
 });
 
 router.route('/:id').put(async (req: Request, res: Response) : Promise<void> => {
-  const board : IBoard | undefined = await boardService.updateBoard(req.params["id"], req.body);
+  const board : BoardEntity | undefined = await boardService.updateBoard(req.params["id"], req.body);
 
   if (board) {
     res.status(200).json(board);
@@ -36,9 +39,9 @@ router.route('/:id').put(async (req: Request, res: Response) : Promise<void> => 
 });
 
 router.route('/:id').delete(async (req: Request, res: Response) : Promise<void> => {
-  const board : IBoard | undefined = await boardService.deleteBoard(req.params["id"]);
-  await taskService.deleteBoardTasks(req.params["id"]);
-
+  const board : DeleteResult = await boardService.deleteBoard(req.params["id"]!);
+  await taskService.deleteBoardTasks(req.params["id"]!);
+    
   if (board) {
     res.status(200).json(board);
   } else {

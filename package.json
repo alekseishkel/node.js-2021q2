@@ -14,7 +14,10 @@
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
     "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
     "doc": "jsdoc src -r -d jsdoc-out",
-    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "migration-generate": "ts-node --transpile-only ./node_modules/typeorm/cli.js --config src/common/ormconfig.ts migration:generate -n",
+    "migration-run": "ts-node --transpile-only ./node_modules/typeorm/cli.js --config src/common/ormconfig.ts migration:run",
+    "migration-revert": "ts-node --transpile-only ./node_modules/typeorm/cli.js --config src/common/ormconfig.ts migration:revert"
   },
   "keywords": [
     "rs",
@@ -49,6 +52,7 @@
     "cross-env": "7.0.3",
     "dotenv": "9.0.0",
     "express": "4.17.1",
+    "pg": "^8.6.0",
     "swagger-ui-express": "4.1.6",
     "typeorm": "^0.2.34",
     "uuid": "8.3.2",
