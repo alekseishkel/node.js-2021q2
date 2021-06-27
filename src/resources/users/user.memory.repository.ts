@@ -12,8 +12,7 @@ const getAllUsers = async () : Promise<Array<UserEntity>> => getRepository(UserE
 
 const getUser = async (id : string | undefined) : Promise<UserEntity | undefined> => getRepository(UserEntity).findOne(id);
 
-const addUser = async (user : UserEntity) : Promise<UserEntity> => {console.log(await hashedUser(user)); return getRepository(UserEntity).save(await hashedUser(user)); 
-};
+const addUser = async (user : UserEntity) : Promise<UserEntity> => getRepository(UserEntity).save(await hashedUser(user)); 
 
 const updateUser = async (id : string | undefined, {name, login, password} : IUser) : Promise<UserEntity | undefined> => {
   const userRepository = await getRepository(UserEntity);

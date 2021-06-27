@@ -117,3 +117,5 @@
 {"message":"   unhandledRejection: Cannot read property 'hashPassword' of undefined","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
 {"message":"   unhandledRejection: data and salt arguments required","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
 {"message":"   unhandledRejection: data and salt arguments required","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"User\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
+{"message":"   unhandledRejection: No repository for \"User\" was found. Looks like this entity is not registered in current \"default\" connection?","level":"\u001b[31m\u001b[31merror\u001b[31m\u001b[39m"}
