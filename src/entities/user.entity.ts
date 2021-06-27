@@ -12,5 +12,5 @@ export class UserEntity {
   login?: string;
 
   @Column('varchar', { length: 100 })
-  password?: string;
+  password!: string;
 }

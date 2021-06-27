@@ -23,8 +23,9 @@ class User {
   }
 
   static toResponse(user : UserEntity) {
-    const { id, name, login } = user;
-    return { id, name, login };
+    const { id, name, login, password} = user;
+
+    return { id, name, login, password };
   }
 }
 
