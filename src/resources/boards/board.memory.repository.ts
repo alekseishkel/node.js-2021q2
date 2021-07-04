@@ -1,69 +1,39 @@
+import { DeleteResult, getRepository } from 'typeorm';
 import { IBoard } from '../../interfaces/interfaces';
+import { BoardEntity } from '../../entities/board.entity';
 
-const boards : Array<IBoard> = [];
+const getAllBoards = async (): Promise<Array<BoardEntity>> =>
+  getRepository(BoardEntity).find();
 
-/**
- * Gets all the boards from the "database"
- * @returns {Promise<Array<Board>>} Promise object represents the array of boards
- */
-const getAllBoards = async () : Promise<Array<IBoard>> => boards;
+const getBoard = async (
+  id: string | undefined
+): Promise<BoardEntity | undefined> => getRepository(BoardEntity).findOne(id);
 
-/**
- * Gets the board by id from the "database"
- * @param {string} id - id of the requested board 
- * @returns {Promise<Board>} Promise object represents the board
- */
-const getBoard = async (id : string | undefined) : Promise<IBoard | undefined> => 
-  boards.find((board: IBoard) => board.id === id);
+const addBoard = async (board: IBoard): Promise<BoardEntity> =>
+  getRepository(BoardEntity).save(board);
 
-/**
- * Add a new board to the "database"
- * @param {object} board - Board
- * @returns {Promise<boards.length>} - new length of boards array
- */
-const addBoard = async (board: IBoard) : Promise<number> => boards.push(board);
+const updateBoard = async (
+  id: string | undefined,
+  { title, columns }: IBoard
+): Promise<BoardEntity | undefined> => {
+  const boardRepository = await getRepository(BoardEntity);
+  const updatingBoard: BoardEntity | undefined = await boardRepository.findOne(id);
 
-/**
- * Updates a board depending on the received data
- * @param {string} id - id of updating board
- * @param {Board} Board - the new board
- * @returns {Promise<Board>} Promise object represents the updated board
- */
-const updateBoard = async (id : string | undefined, {title, columns} : IBoard) : Promise<IBoard | undefined> => {
-  let updatedBoard : IBoard | undefined;
-  const updatingBoard : IBoard | undefined = await getBoard(id);
-
-  if (updatingBoard) {
-    const updatingBoardIndex : number = boards.findIndex((board : IBoard) => board.id === id);
-    updatedBoard = {...updatingBoard, title, columns};
-    boards[updatingBoardIndex] = updatedBoard; 
-  } else {
-    updatedBoard = undefined;
-  }
-
-  return updatedBoard;
+  return boardRepository.save({
+    ...updatingBoard,
+    title,
+    columns,
+  });
 };
 
-/**
- * Deletes the board from the "database"
- * @param {string} id - id of deleting board
- * @returns {Promise<Board>} Promise object represents the deleted board
- */
-const deleteBoard = async (id : string | undefined) : Promise<IBoard | undefined> => {
-  const deletingBoard : IBoard | undefined = await getBoard(id);
-  
-  if (deletingBoard) {
-    const deletingingBoardIndex : number = boards.findIndex((board : IBoard) => board.id === id);
-    boards.splice(deletingingBoardIndex, 1);
-  }
-  
-  return deletingBoard;
-};
+const deleteBoard = async (
+  id: string
+): Promise<DeleteResult> => getRepository(BoardEntity).delete(id);
 
-export const boardsRepo = { 
-  getAllBoards, 
-  addBoard, 
-  getBoard, 
-  updateBoard, 
-  deleteBoard 
+export const boardsRepo = {
+  getAllBoards,
+  addBoard,
+  getBoard,
+  updateBoard,
+  deleteBoard,
 };

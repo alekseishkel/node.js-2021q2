@@ -1,5 +1,5 @@
 import {v4 as uuidv4} from 'uuid';
-import { IUser } from '../../interfaces/interfaces';
+import { UserEntity } from '../../entities/user.entity';
 
 class User {
   id: string;
@@ -22,9 +22,10 @@ class User {
     this.password = password;
   }
 
-  static toResponse(user : IUser) {
-    const { id, name, login } = user;
-    return { id, name, login };
+  static toResponse(user : UserEntity) {
+    const { id, name, login, password} = user;
+
+    return { id, name, login, password };
   }
 }
 
